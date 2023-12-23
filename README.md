@@ -4,7 +4,12 @@
 
 > This project is for currency exchange.
 
+![image](https://github.com/mirafzal114/currency_exchange/assets/136591233/84ba68b4-5247-499e-9d58-9071b99b0c01)
 
+
+![image](https://github.com/mirafzal114/currency_exchange/assets/136591233/7a96c062-2b4e-413a-bc7e-a424e6236cc1)
+
+![image](https://github.com/mirafzal114/currency_exchange/assets/136591233/60c7e443-8a87-4f9f-b0e4-43b1017b6365)
 
 
 
@@ -38,11 +43,11 @@ This project uses the pipenv tool to manage dependencies and the Python virtual 
 
 1. Clone the repository:
     ```
-    $ git clone https://github.com/Humoyun004/Currency_App.git
+    $ git clone https://github.com/mirafzal114/currency_exchange.git
     ```
 2. Access the repository:
     ```
-    $ cd Currency_App
+    $ cd currency_exchange
     ```
 
 
@@ -65,7 +70,7 @@ This project uses the pipenv tool to manage dependencies and the Python virtual 
 
 
 
-**When you are in the `(Currency_App) Currency_App` environment, you will have this view.
+**When you are in the `(currency_exhange) currency_exchange` environment, you will have this view.
 
 
 ````bash
@@ -126,7 +131,7 @@ This project uses Docker to manage its environment. To run it locally, follow th
 3. Check ``Dockerfile`` if you do not have an image download from ``Docker Hub``:
     ````bash
     $ docker pull python:3.11-alpine
-    ```
+    ````
 
 
 
@@ -158,10 +163,18 @@ Your project should now be available in your browser at `https://localhost:1212/
 2. Enter the command:
     ````bash
     $ python manage.py runserver
-    ```
+    ````
 
     ## Contribution
 **If you would like to contribute to the development of the application please follow these steps:**
 
+1. Fork the repository on GitHub.
+2. Clone the fork repository to your local machine.
+3. Create a new branch for your feature or fix bugs.
+4. Make changes and commits with descriptions of such messages.
+5. Push changes to the fork repository.
+6. Create a pull request (pull request) on the main repository.
 
+   ## Contacts
+**If you have questions or suggestions regarding the application, please contact us at mirafzaaal2609@gmail.com. We value your opinion!**
 
