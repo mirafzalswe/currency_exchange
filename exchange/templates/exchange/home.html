@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}
+    Exchage App
+{% endblock %}
+
+{% block body %}
+
+        <div class="wrapper">
+        <header>Currency Converted</header>
+        <form action="{% url 'home-page' %}" method="GET">
+        {% csrf_token %}
+            <div class="amount">
+                <p>Enter amount</p>
+                <input type="text" class="text" value="{% if request.GET.amount %}{{ request.GET.amount }}{% else %}1{% endif %}" name="amount" id="amount">
+            </div>
+            <div class="drop-list">
+                <div class="from">
+                    <p>From</p>
+                    <div class="select-box">
+                        <img {% if tr_from %} src="{{ tr_from }}" {% else %} src="https://flagsapi.com/US/flat/64.png" {% endif %}alt="flag">
+                            <select class="form-control" name="TransferFrom" id="TransferFrom">
+                            <option value="USD" {% if transfer_from == 'USD' %} selected {% endif %}>USD</option>
+                            <option value="JPY" {% if transfer_from == 'JPY' %} selected {% endif %}>JPY</option>
+                            <option value="GBP" {% if transfer_from == 'GBP' %} selected {% endif %}>GBP</option>
+                            <option value="AUD" {% if transfer_from == 'AUD' %} selected {% endif %}>AUD</option>
+                            <option value="CAD" {% if transfer_from == 'CAD' %} selected {% endif %}>CAD</option>
+                            <option value="CHF" {% if transfer_from == 'CHF' %} selected {% endif %}>CHF</option>
+                            <option value="CNY" {% if transfer_from == 'CNY' %} selected {% endif %}>CNY</option>
+                            <option value="SEK" {% if transfer_from == 'SEK' %} selected {% endif %}>SEK</option>
+                            <option value="NZD" {% if transfer_from == 'NZD' %} selected {% endif %}>NZD</option>
+                            <option value="NOK" {% if transfer_from == 'NOK' %} selected {% endif %}>NOK</option>
+                            <option value="INR" {% if transfer_from == 'INR' %} selected {% endif %}>INR</option>
+                            <option value="BRL" {% if transfer_from == 'BRL' %} selected {% endif %}>BRL</option>
+                            <option value="ZAR" {% if transfer_from == 'ZAR' %} selected {% endif %}>ZAR</option>
+                            <option value="RUB" {% if transfer_from == 'RUB' %} selected {% endif %}>RUB</option>
+                            <option value="HKD" {% if transfer_from == 'HKD' %} selected {% endif %}>HKD</option>
+                            <option value="SGD" {% if transfer_from == 'SGD' %} selected {% endif %}>SGD</option>
+                            <option value="TRY" {% if transfer_from == 'TRY' %} selected {% endif %}>TRY</option>
+                            <option value="MXN" {% if transfer_from == 'MXN' %} selected {% endif %}>MXN</option>
+                            <option value="PLN" {% if transfer_from == 'PLN' %} selected {% endif %}>PLN</option>
+                            <option value="THB" {% if transfer_from == 'THB' %} selected {% endif %}>THB</option>
+                            <option value="IDR" {% if transfer_from == 'IDR' %} selected {% endif %}>IDR</option>
+                            <option value="MYR" {% if transfer_from == 'MYR' %} selected {% endif %}>MYR</option>
+                            <option value="PHP" {% if transfer_from == 'PHP' %} selected {% endif %}>PHP</option>
+                            <option value="DKK" {% if transfer_from == 'DKK' %} selected {% endif %}>DKK</option>
+                            <option value="HUF" {% if transfer_from == 'HUF' %} selected {% endif %}>HUF</option>
+                            <option value="CZK" {% if transfer_from == 'CZK' %} selected {% endif %}>CZK</option>
+                            <option value="ILS" {% if transfer_from == 'ILS' %} selected {% endif %}>ILS</option>
+                            <option value="KRW" {% if transfer_from == 'KRW' %} selected {% endif %}>KRW</option>
+                            <option value="ARS" {% if transfer_from == 'ARS' %} selected {% endif %}>ARS</option>
+                            <option value="CLP" {% if transfer_from == 'CLP' %} selected {% endif %}>CLP</option>
+                            <option value="UZS" {% if transfer_from == 'UZS' %} selected {% endif %}>UZS</option>
+                            <option value="EUR" {% if transfer_from == 'EUR' %} selected {% endif %}>EUR</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
+                <div class="to">
+                    <p>To</p>
+                    <div class="select-box">
+                        <img {% if tr_to %} src="{{ tr_to }}" {% else %} src="https://flagsapi.com/UZ/flat/64.png" {% endif %} alt="flag">
+                        <select name="TransferTo" id="TransferTo" class="form-select" >
+                            <option value="UZS" {% if transfer_to == 'UZS' %} selected {% endif %}>UZS</option>
+                            <option value="JPY" {% if transfer_to == 'JPY' %} selected {% endif %}>JPY</option>
+                            <option value="GBP" {% if transfer_to == 'GBP' %} selected {% endif %}>GBP</option>
+                            <option value="AUD" {% if transfer_to == 'AUD' %} selected {% endif %}>AUD</option>
+                            <option value="CAD" {% if transfer_to == 'CAD' %} selected {% endif %}>CAD</option>
+                            <option value="CHF" {% if transfer_to == 'CHF' %} selected {% endif %}>CHF</option>
+                            <option value="CNY" {% if transfer_to == 'CNY' %} selected {% endif %}>CNY</option>
+                            <option value="SEK" {% if transfer_to == 'SEK' %} selected {% endif %}>SEK</option>
+                            <option value="NZD" {% if transfer_to == 'NZD' %} selected {% endif %}>NZD</option>
+                            <option value="NOK" {% if transfer_to == 'NOK' %} selected {% endif %}>NOK</option>
+                            <option value="INR" {% if transfer_to == 'INR' %} selected {% endif %}>INR</option>
+                            <option value="BRL" {% if transfer_to == 'BRL' %} selected {% endif %}>BRL</option>
+                            <option value="ZAR" {% if transfer_to == 'ZAR' %} selected {% endif %}>ZAR</option>
+                            <option value="RUB" {% if transfer_to == 'RUB' %} selected {% endif %}>RUB</option>
+                            <option value="HKD" {% if transfer_to == 'HKD' %} selected {% endif %}>HKD</option>
+                            <option value="SGD" {% if transfer_to == 'SGD' %} selected {% endif %}>SGD</option>
+                            <option value="TRY" {% if transfer_to == 'TRY' %} selected {% endif %}>TRY</option>
+                            <option value="MXN" {% if transfer_to == 'MXN' %} selected {% endif %}>MXN</option>
+                            <option value="PLN" {% if transfer_to == 'PLN' %} selected {% endif %}>PLN</option>
+                            <option value="THB" {% if transfer_to == 'THB' %} selected {% endif %}>THB</option>
+                            <option value="IDR" {% if transfer_to == 'IDR' %} selected {% endif %}>IDR</option>
+                            <option value="MYR" {% if transfer_to == 'MYR' %} selected {% endif %}>MYR</option>
+                            <option value="PHP" {% if transfer_to == 'PHP' %} selected {% endif %}>PHP</option>
+                            <option value="DKK" {% if transfer_to == 'DKK' %} selected {% endif %}>DKK</option>
+                            <option value="HUF" {% if transfer_to == 'HUF' %} selected {% endif %}>HUF</option>
+                            <option value="CZK" {% if transfer_to == 'CZK' %} selected {% endif %}>CZK</option>
+                            <option value="ILS" {% if transfer_to == 'ILS' %} selected {% endif %}>ILS</option>
+                            <option value="KRW" {% if transfer_to == 'KRW' %} selected {% endif %}>KRW</option>
+                            <option value="ARS" {% if transfer_to == 'ARS' %} selected {% endif %}>ARS</option>
+                            <option value="CLP" {% if transfer_to == 'CLP' %} selected {% endif %}>CLP</option>
+                            <option value="EUR" {% if transfer_to == 'USD' %} selected {% endif %}>USD</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        {% if response %}
+            <p style="margin-top: 20px;">Exchange Rate:   {{ amount }} {{ transfer_to }} </p>
+{#            {% elif error %}<p>Error: {{ error }}</p>#}
+        {% endif %}
+            <button type="submit">Get Exchange Rate </button>
+        </form>
+            <a class="history" href="{% url 'history' %}">History</a>
+    </div>
+
+{% endblock %}

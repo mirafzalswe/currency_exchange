@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://directpaynet.com/wp-content/uploads/2023/10/world-payments-money.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.wrapper{
+    padding: 30px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 4px 4px 8px #520bb0;
+}
+.wrapper header{
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.wrapper form{
+    margin:40px 0 20px 0;
+}
+form :where(button,select, input){
+    width: 100%;
+    outline: none;
+    border: none;
+
+}
+form input{
+    padding: 0 15px;
+    border: 1px solid #999;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+form p{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+form input:focus{
+    padding: 0 13px;
+    border: 2px solid rgb(125, 15, 234) ;
+}
+form .drop-list{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drop-list .select-box{
+    display: flex;
+    height: 45px;
+    width: 115px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+.select-box select{
+    width: auto;
+    font-size: 16px;
+}
+.select-box img{
+    max-width: 30px;
+
+}
+
+form .exchange-rate{
+    font-size: 20px;
+    margin: 25px 0 30px;
+}
+form button{
+    padding:15px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+form button:hover{
+    background-color:rgb(125, 15, 234) ;
+    color: white;
+}
+form button:active{
+    background-color:rgb(93, 0, 185) ;
+    color: white;
+
+}
+
+.icon{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+/*Histroy table */
+
+table{
+    background-color: beige;
+}
+
+h1 {
+    color:white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+.history{
+    text-decoration: none;
+    text-align: center;
+
+}
+.history:hover{
+    color: red;
+}
